@@ -1,0 +1,13 @@
+[package]
+name = "crate-finder"
+version = "0.0.1"
+edition = "2024"
+description = "A terminal UI for searching and browsing Rust crates, powered by cargo."
+repository = "https://github.com/14096/crate-finder"
+keywords = ["tui", "crate", "cargo"]
+categories = ["command-line-utilities"]
+license = "MIT"
+
+[dependencies]
+ratatui = "0.30.0"
+crossterm = "0.28.1"
