@@ -3,7 +3,7 @@ use std::process::Command;
 
 pub fn search(query: &str) -> Result<Vec<CrateInfo>, String> {
     let output = Command::new("cargo")
-        .args(["search", query, "--limit", "10"])
+        .args(["search", query, "--limit", "30"])
         .output()
         .map_err(|e| format!("Failed to run cargo search: {e}"))?;
 

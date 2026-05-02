@@ -71,10 +71,7 @@ fn render_center(f: &mut Frame, app: &App, area: Rect) {
         let msg = if let Some(err) = &app.error {
             Span::styled(err.as_str(), Style::default().fg(Color::Red))
         } else {
-            Span::styled(
-                "Type a crate name and press Enter to search",
-                Style::default().fg(Color::DarkGray),
-            )
+            Span::styled("", Style::default().fg(Color::DarkGray))
         };
         f.render_widget(Paragraph::new(msg).block(center_block(" results ")), area);
         return;
@@ -126,6 +123,10 @@ fn render_results(f: &mut Frame, app: &App, area: Rect) {
                     format!("  {}", c.description),
                     Style::default().fg(Color::DarkGray),
                 )),
+                Line::from(Span::styled(
+                    format!(" "),
+                    Style::default().fg(Color::DarkGray),
+                )),
             ])
         })
         .collect();
@@ -143,7 +144,7 @@ fn render_results(f: &mut Frame, app: &App, area: Rect) {
                     .bg(Color::DarkGray)
                     .add_modifier(Modifier::BOLD),
             )
-            .highlight_symbol("▶ "),
+            .highlight_symbol(" "),
         area,
         &mut state,
     );
@@ -364,7 +365,7 @@ fn render_feature_select(f: &mut Frame, fs: &FeatureSelectState, is_adding: bool
                     .bg(Color::DarkGray)
                     .add_modifier(Modifier::BOLD),
             )
-            .highlight_symbol("▶ "),
+            .highlight_symbol(""),
         area,
         &mut state,
     );
