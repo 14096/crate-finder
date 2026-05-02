@@ -147,7 +147,7 @@ dependencies = [
 
 [[package]]
 name = "crate-finder"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "crossterm 0.28.1",
  "ratatui",
